@@ -28,6 +28,7 @@ class _BottomNavigationBar extends State<MyBottomNavigationBar> {
   Widget build(BuildContext context) {
     return AnimatedBottomNavigationBar(
       icons: navBarIconList,
+      backgroundColor: Colors.white,
       activeColor: Colors.cyan,
       gapLocation: GapLocation.center,
       notchSmoothness: NotchSmoothness.defaultEdge,
