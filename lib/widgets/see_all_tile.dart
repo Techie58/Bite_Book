@@ -8,7 +8,7 @@ class SeeAllTile extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 23),
+      padding: const EdgeInsets.only(top: 25,bottom: 10,left: 23,right: 28),
       child:
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

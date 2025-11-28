@@ -18,9 +18,12 @@ class RecipesGridView extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
+        childAspectRatio: 1,
       ),
       itemBuilder: (context, index) {
         return RecipesCardDesign(
+          time: ["20",'40','10'],
+          kcal: ['120','189','65'],
           recipeNames: recipesNameList,
           recipesImages: recipesPicsList,
           index: index,

@@ -58,13 +58,9 @@ class _HomePageState extends State<Home> {
                   bannersPics: bannersPicsList,
                   bannerController: bannerController,
                 ),
-                SizedBox(height: 25),
                 SeeAllTile(tileName: "Category"),
-                SizedBox(height: 10),
                 CategoryListView(categoryList: categoryNamesList),
-                SizedBox(height: 25),
                 SeeAllTile(tileName: 'Popular Recipes'),
-                SizedBox(height: 10),
 
                 /// 🔥 FIX HERE
                 RecipesGridView(
