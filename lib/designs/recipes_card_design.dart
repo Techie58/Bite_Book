@@ -16,16 +16,15 @@ class RecipesCardDesign extends StatelessWidget {
     return Card(
       elevation: 50,
       child: Column(
-
         children: [
           Container(
             height: 128,
             width: 168,
             decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage(recipesImages[index]),fit: BoxFit.cover),
+              image: DecorationImage(image: AssetImage(recipesImages[index]),fit: BoxFit.cover,),
             ),
           ),
-          Text(recipeNames[index],style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),),
+          Text(recipeNames[index],style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),maxLines: 2,),
         ],
       ),
     );
