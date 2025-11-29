@@ -1,5 +1,6 @@
 import 'package:bite_book/designs/category_container_design.dart';
 import 'package:bite_book/designs/recipes_card_design.dart';
+import 'package:bite_book/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 
 class RecipesGridView extends StatelessWidget {
@@ -22,10 +23,7 @@ class RecipesGridView extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         return RecipesCardDesign(
-          time: ["20",'40','10'],
-          kcal: ['120','189','65'],
-          recipeNames: recipesNameList,
-          recipesImages: recipesPicsList,
+          isHomePage: true,
           index: index,
         );
       },

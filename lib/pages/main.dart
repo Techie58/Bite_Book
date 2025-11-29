@@ -1,3 +1,4 @@
+import 'package:bite_book/main_navScreen.dart';
 import 'package:bite_book/pages/home.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'BiteBook',
       debugShowCheckedModeBanner: false,
 
-      home: Home(),
+      home: MainNavScreen(),
     );
   }
 

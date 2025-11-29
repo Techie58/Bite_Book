@@ -1,20 +1,15 @@
+import 'package:bite_book/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class RecipesCardDesign extends StatelessWidget {
-  final List<String> recipeNames;
-  final List<String> recipesImages;
-  final List<String> kcal;
-  final List<String> time;
   final int index;
   final VoidCallback? onTap;
+  final bool isHomePage;
 
   const RecipesCardDesign({
     super.key,
-    required this.recipeNames,
+    required this.isHomePage,
     required this.index,
-    required this.recipesImages,
-    required this.kcal,
-    required this.time,
     this.onTap,
   });
 
@@ -49,13 +44,14 @@ class RecipesCardDesign extends StatelessWidget {
               child: Stack(
                 children: [
                   Image.asset(
-                    recipesImages[index],
+                    recipesImagesList[index],
                     height: screenWidth * 0.28,     // RESPONSIVE HEIGHT
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
 
-                  Positioned(
+                  //------Fav Icon
+                  ?isHomePage ? Positioned(
                     top: 10,
                     right: 10,
                     child: CircleAvatar(
@@ -64,7 +60,7 @@ class RecipesCardDesign extends StatelessWidget {
                       child: Icon(Icons.favorite_border_rounded,
                           size: 16, color: Colors.grey[600]),
                     ),
-                  ),
+                  ) : null,
                 ],
               ),
             ),
@@ -74,7 +70,7 @@ class RecipesCardDesign extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Text(
-                recipeNames[index],
+                recipesNamesList[index],
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
@@ -88,14 +84,15 @@ class RecipesCardDesign extends StatelessWidget {
 
             const SizedBox(height: 6),
 
-            Padding(
+
+            ?isHomePage ? Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12),
               child: Row(
                 children: [
                   Icon(Icons.local_fire_department_outlined,
                       size: 15, color: Colors.grey[500]),
 
-                  Text("  ${kcal[index]} Kcal",
+                  Text("  ${kcalList[index]} Kcal",
                       style: TextStyle(fontSize: 12, color: Colors.grey[600])),
 
                   const SizedBox(width: 6),
@@ -114,11 +111,11 @@ class RecipesCardDesign extends StatelessWidget {
                   Icon(Icons.access_time_outlined,
                       size: 15, color: Colors.grey[500]),
 
-                  Text("  ${time[index]} Min",
+                  Text("  ${timeList[index]} Min",
                       style: TextStyle(fontSize: 12, color: Colors.grey[600])),
                 ],
               ),
-            ),
+            ) : null,
 
             const SizedBox(height: 12),
           ],

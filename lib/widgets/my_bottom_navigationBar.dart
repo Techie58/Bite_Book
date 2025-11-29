@@ -4,7 +4,13 @@ import 'package:flutter/material.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   final int bottomNavIndex;
-  const MyBottomNavigationBar({super.key, required this.bottomNavIndex});
+  final Function(int) onTap;
+
+  const MyBottomNavigationBar({
+    super.key,
+    required this.bottomNavIndex,
+    required this.onTap,
+  });
 
   @override
   State<MyBottomNavigationBar> createState() =>
@@ -34,7 +40,10 @@ class _BottomNavigationBar extends State<MyBottomNavigationBar> {
       notchSmoothness: NotchSmoothness.defaultEdge,
       activeIndex: _bottomNavIndex,
       onTap: (index) {
-        setState(() => _bottomNavIndex = index);
+        widget.onTap(index);
+        setState(() {
+          _bottomNavIndex = index;
+        });
       },
     );
   }

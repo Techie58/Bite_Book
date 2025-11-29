@@ -9,7 +9,10 @@ class CategoryListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CategoryDesign(categoryList: categoryList)
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: CategoryDesign(categoryList: categoryList),
+    )
       ;
   }
 }

@@ -14,7 +14,7 @@ class FeaturedBannerPageController extends StatelessWidget {
       children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 23),
-            child: Text('Featured',style: TextStyle(fontSize:26,fontWeight: FontWeight.bold ),),
+            child: Text('Featured',style: TextStyle(fontSize:26,fontWeight: FontWeight.bold,color: Color(0xFF0A2533) ),),
           ),
           SizedBox(height: 12,),
 
