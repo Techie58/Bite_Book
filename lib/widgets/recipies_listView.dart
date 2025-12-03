@@ -1,5 +1,5 @@
-import 'package:bite_book/designs/category_container_design.dart';
-import 'package:bite_book/designs/recipes_card_design.dart';
+import 'package:bite_book/designs/home/category_container_design.dart';
+import 'package:bite_book/designs/home/recipes_card_design.dart';
 import 'package:bite_book/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 

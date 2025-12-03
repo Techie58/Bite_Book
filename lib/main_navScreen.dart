@@ -1,7 +1,8 @@
-import 'package:bite_book/pages/fav_page.dart';
 import 'package:bite_book/pages/home.dart';
+import 'package:bite_book/pages/recipe_detail_screen.dart';
 import 'package:bite_book/pages/search_page.dart';
 import 'package:bite_book/pages/setting_page.dart';
+import 'package:bite_book/utils/constants.dart';
 import 'package:bite_book/widgets/my_bottom_navigationBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,20 @@ class MainNavScreen extends StatefulWidget {
 
 class _MainNavigationState extends State<MainNavScreen> {
   int currentIndex = 0;
-  final List<Widget> screen = [Home(), SearchPage(), FavPage(), SettingPage()];
+  final List<Widget> screen = [
+    Home(),
+    SearchPage(),
+    RecipeDetailScreen(
+      image: recipeDetailImage,
+      title: recipeDetailTitle,
+      subtitle: recipeDetailSubtitle,
+      recipeDetailNutritionGridList: recipeDetailNutritionGridList,
+      ingredients: recipeDetailIngredients,
+      instructions: recipeDetailInstructions,
+      relatedRecipes: recipeDetailRelatedRecipes,
+    ),
+    SettingPage(),
+  ];
 
   void onNavTap(int index) {
     setState(() {
@@ -30,7 +44,11 @@ class _MainNavigationState extends State<MainNavScreen> {
         backgroundColor: Color(0xFF042628),
         elevation: 5,
         shape: CircleBorder(),
-        child: HugeIcon(icon: HugeIcons.strokeRoundedChef,color: Colors.white,size: 30,),
+        child: HugeIcon(
+          icon: HugeIcons.strokeRoundedChef,
+          color: Colors.white,
+          size: 30,
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: screen[currentIndex],

@@ -1,6 +1,6 @@
-import 'package:bite_book/designs/category_container_design.dart';
+import 'package:bite_book/designs/home/category_container_design.dart';
 import 'package:bite_book/designs/editor_choice.dart';
-import 'package:bite_book/designs/recipes_card_design.dart';
+import 'package:bite_book/designs/home/recipes_card_design.dart';
 import 'package:bite_book/designs/search_container_design.dart';
 import 'package:bite_book/utils/colors.dart';
 import 'package:bite_book/utils/constants.dart';
@@ -74,6 +74,10 @@ class SearchPage extends StatelessWidget {
           ),
 
           /// 🔹 Editor's Choice List
+          /// 
+          SliverToBoxAdapter(
+            child: SeeAllTile(tileName: "Editor's Choice"),
+          ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
                   (context, index) {

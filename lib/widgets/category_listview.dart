@@ -1,4 +1,4 @@
-import 'package:bite_book/designs/category_container_design.dart';
+import 'package:bite_book/designs/home/category_container_design.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

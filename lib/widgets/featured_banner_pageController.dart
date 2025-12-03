@@ -1,4 +1,4 @@
-import 'package:bite_book/designs/featured_container_desing.dart';
+import 'package:bite_book/designs/home/featured_container_desing.dart';
 import 'package:flutter/cupertino.dart';
 
 class FeaturedBannerPageController extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:bite_book/designs/category_container_design.dart';
+import 'package:bite_book/designs/home/category_container_design.dart';
 import 'package:bite_book/widgets/appBar.dart';
 import 'package:bite_book/widgets/my_bottom_navigationBar.dart';
 import 'package:bite_book/widgets/category_listview.dart';

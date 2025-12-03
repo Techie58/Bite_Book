@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 
 class SeeAllTile extends StatelessWidget{
-  final String tileName;
+  final String tileName,seeAll;
 
-  const SeeAllTile({super.key, required this.tileName});
+
+  const SeeAllTile({super.key, required this.tileName,  this.seeAll = "See All"});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class SeeAllTile extends StatelessWidget{
             ),
           ),
           Text(
-            "See All",
+            seeAll,
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
