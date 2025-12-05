@@ -39,7 +39,6 @@ class _HomePageState extends State<Home> {
               CategoryDesign(categoryList: categoryNamesList),
               SeeAllTile(tileName: 'Popular Recipes'),
 
-              /// 🔥 FIX HERE
               RecipesGridView(
                 recipesPicsList: recipesImagesList,
                 recipesNameList: recipesNamesList,

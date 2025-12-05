@@ -26,10 +26,23 @@ class _ToggleState extends State<ToggleIngredientOrInstruction> {
     isIngredients = widget.isIngredients;
   }
 
+  @override
+  void didUpdateWidget(covariant ToggleIngredientOrInstruction oldWidget) {
+    // TODO: implement didUpdateWidget
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.isIngredients != widget.isIngredients) {
+      setState(() {
+        isIngredients = widget.isIngredients;
+      });
+    }
+
+  }
+
   void onTap(bool value) {
     setState(() {
       isIngredients = value;
     });
+    widget.onToggle(value);
   }
 
   @override

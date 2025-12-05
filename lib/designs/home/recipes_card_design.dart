@@ -56,7 +56,7 @@ class RecipesCardDesign extends StatelessWidget {
 
                   //------Fav Icon
                   ?isHomePage
-                      ? Positioned(top: 10, right: 10, child: FavouriteBtn(icon: HugeIcons.strokeRoundedFavourite, containerSize: 35, iconSize: 22))
+                      ? Positioned(top: 10, right: 10, child: FavouriteBtn(hugeIcon: HugeIcons.strokeRoundedFavourite, containerSize: 35, iconSize: 22))
                       : null,
                 ],
               ),

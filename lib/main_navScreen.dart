@@ -7,6 +7,7 @@ import 'package:bite_book/widgets/my_bottom_navigationBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class MainNavScreen extends StatefulWidget {
   @override
@@ -14,11 +15,13 @@ class MainNavScreen extends StatefulWidget {
 }
 
 class _MainNavigationState extends State<MainNavScreen> {
+  final PanelController panelController = PanelController();
   int currentIndex = 0;
-  final List<Widget> screen = [
+  List<Widget> get screen => [
     Home(),
     SearchPage(),
     RecipeDetailScreen(
+      panelController: panelController,
       image: recipeDetailImage,
       title: recipeDetailTitle,
       subtitle: recipeDetailSubtitle,

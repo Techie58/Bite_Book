@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 
 class FavouriteBtn extends StatelessWidget {
-  final List<List<dynamic>> icon;
+  final List<List<dynamic>> hugeIcon;
   final double iconSize;
   final Color? iconColor;
   final double containerSize;
@@ -13,7 +13,7 @@ class FavouriteBtn extends StatelessWidget {
 
   const FavouriteBtn({
     Key? key,
-    required this.icon,
+    required this.hugeIcon,
     required this.containerSize,
     required this.iconSize,
     this.iconColor = mainBlueColor,
@@ -30,7 +30,7 @@ class FavouriteBtn extends StatelessWidget {
         color: containerColor,
         borderRadius: BorderRadius.circular(containerRadius),
       ),
-      child: Center(child: HugeIcon( icon: icon, size: iconSize, color: iconColor,)),
+      child: Center(child: HugeIcon( icon: hugeIcon, size: iconSize, color: iconColor,)),
     );
   }
 }

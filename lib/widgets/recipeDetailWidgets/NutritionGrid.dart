@@ -38,7 +38,7 @@ class NutritionGrid extends StatelessWidget {
         return Row(
           children: [
             FavouriteBtn(
-              icon: recipeDetailNutritionGrid.icon,
+              hugeIcon: recipeDetailNutritionGrid.icon,
               containerSize: iconContainerSize,
               iconSize: iconSize,
               containerRadius: 14,

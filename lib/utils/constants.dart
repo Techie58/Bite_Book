@@ -40,23 +40,17 @@ const String recipeDetailTitle = "Pasta";
 const String recipeDetailSubtitle =
     "Pasta is a staple food of Italian origin made from a simple unleavened dough of ground grain (typically durum wheat semolina) and water or eggs, which is formed into various shapes and cooked, usually by boiling. ";
 final List<NutritionGridModel> recipeDetailNutritionGridList = [
-  NutritionGridModel(
-    title: "128g carbs",
-    icon: HugeIcons.strokeRoundedBread04,
-  ),
+  NutritionGridModel(title: "128g carbs", icon: HugeIcons.strokeRoundedBread04),
   NutritionGridModel(
     title: "17g proteins",
     icon: HugeIcons.strokeRoundedAvocado,
   ),
-  NutritionGridModel(
-    title: "120 Kcal",
-    icon: HugeIcons.strokeRoundedFire03,
-  ),
-  NutritionGridModel(
-    title: "91g fats",
-    icon: HugeIcons.strokeRoundedPizza01,
-  ),
+  NutritionGridModel(title: "120 Kcal", icon: HugeIcons.strokeRoundedFire03),
+  NutritionGridModel(title: "91g fats", icon: HugeIcons.strokeRoundedPizza01),
 ];
+
+const String instruction =
+    " To prepare the recipe, start by washing and chopping all the ingredients and keeping the spices measured and ready. Heat some oil in a pan over medium flame, then add the onions and sauté until golden brown. Mix in the ginger–garlic paste and cook until the raw smell disappears. Add the tomatoes and cook until they soften, then add all the spices and stir well to combine. Add the main ingredient—such as chicken or vegetables—and cook until it changes color and starts to release its aroma. Pour in water, milk, or stock as needed, cover the pan, and let it cook on low heat until fully done. Finally, taste and adjust the seasoning, garnish with fresh coriander or green chilies, and serve hot. ";
 
 const List<String> recipeDetailIngredients = [
   'wheat semolina',

@@ -23,17 +23,21 @@ class _IngredientCardDesignState extends State<IngredientCardDesign> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     chekBox = widget.chekBox ;
 
   }
+
+  void chekBoxOnChange(bool? value) {
+    setState(() {
+      chekBox =  value  ?? false;   });
+  }
+
+
+
   @override
   Widget build(BuildContext context) {
-    void chekBoxOnChange() {
-      setState(() {
-        widget.chekBox ?  chekBox =  false  : true;   });
-    }
+
 
     double screenWidth = MediaQuery.of(context).size.width;
     double picCardSize = screenWidth * 0.2;
@@ -72,9 +76,8 @@ class _IngredientCardDesignState extends State<IngredientCardDesign> {
         ),
 
         trailing: Checkbox(
-          value: widget.chekBox,
-
-          onChanged: (value) => chekBoxOnChange()
+          value: chekBox,
+          onChanged: (value) => chekBoxOnChange(value),
         ),
       ),
     );
