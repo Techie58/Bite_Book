@@ -1,23 +1,27 @@
 import 'package:bite_book/designs/recipeDetail/favourite_btn.dart';
 import 'package:bite_book/models/recipe_detail_model.dart';
+import 'package:bite_book/providers/fav_recipe_provider.dart';
 import 'package:bite_book/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:provider/provider.dart';
 
 class RecipesCardDesign extends StatelessWidget {
   final int index;
   final bool isHomePage;
   final RecipeDetailModel recipeDetailModel;
 
-
   const RecipesCardDesign({
     super.key,
     required this.isHomePage,
-    required this.index, required this.recipeDetailModel,
+    required this.index,
+    required this.recipeDetailModel,
   });
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<RecipeProvider>(context, listen: false);
+
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
@@ -39,12 +43,9 @@ class RecipesCardDesign extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           //----------------Recipe Image
           ClipRRect(
-            borderRadius: const BorderRadius.vertical(
-              top: Radius.circular(20),
-            ),
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
             child: Stack(
               children: [
                 Image.asset(
@@ -56,7 +57,24 @@ class RecipesCardDesign extends StatelessWidget {
 
                 //------Favourite Icon Button
                 ?isHomePage
-                    ? Positioned(top: 10, right: 10, child: FavouriteBtn(hugeIcon: HugeIcons.strokeRoundedFavourite, containerSize: 35, iconSize: 22))
+                    ? Positioned(
+                        top: 10,
+                        right: 10,
+                        child: Consumer<RecipeProvider>(
+                          builder: (_, val, _) {
+                            final isFav = val.isFavorite(recipeDetailModel.id);
+                            return FavouriteBtn(
+                              iconData: isFav ? Icons.favorite : Icons.favorite_border_rounded ,
+                              containerSize: 35,
+                              iconSize: 22,
+                              iconColor: isFav ? Colors.red : Colors.black,
+                              onTap: (){
+                                provider.toggleFavorite(recipeDetailModel.id);
+                              },
+                            );
+                          },
+                        ),
+                      )
                     : null,
               ],
             ),
@@ -84,55 +102,44 @@ class RecipesCardDesign extends StatelessWidget {
 
           ?isHomePage
               ? Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: Row(
-              children: [
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  child: Row(
+                    children: [
+                      //------------Calories Detail
+                      Icon(
+                        Icons.local_fire_department_outlined,
+                        size: 15,
+                        color: Colors.grey[500],
+                      ),
 
-                //------------Calories Detail
-                Icon(
-                  Icons.local_fire_department_outlined,
-                  size: 15,
-                  color: Colors.grey[500],
-                ),
+                      Text(
+                        "  ${kcalList[index]} Kcal",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      ),
 
-                Text(
-                  "  ${kcalList[index]} Kcal",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
+                      const SizedBox(width: 6),
+
+                      //----------Dot Separator
+                      Container(
+                        width: 5,
+                        height: 5,
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+
+                      const SizedBox(width: 6),
+
+                      Icon(Icons.star, size: 15, color: Colors.grey[500]),
+
+                      Text(
+                        "  ${ratingList[index]}",
+                        style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                      ),
+                    ],
                   ),
-                ),
-
-                const SizedBox(width: 6),
-
-                //----------Dot Separator
-                Container(
-                  width: 5,
-                  height: 5,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[300],
-                    shape: BoxShape.circle,
-                  ),
-                ),
-
-                const SizedBox(width: 6),
-
-                Icon(
-                  Icons.star,
-                  size: 15,
-                  color: Colors.grey[500],
-                ),
-
-                Text(
-                  "  ${ratingList[index]}",
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                  ),
-                ),
-              ],
-            ),
-          )
+                )
               : null,
 
           const SizedBox(height: 12),

@@ -72,13 +72,13 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                   GestureDetector(
                     onTap: (){Navigator.of(context).pop();},
                     child: FavouriteBtn(
-                      hugeIcon: HugeIcons.strokeRoundedCancel01,
+                      iconData: Icons.arrow_back_ios_new_outlined,
                       containerSize: screenWidth * 0.10,
                       iconSize: screenWidth * 0.07,
                     ),
                   ),
                   FavouriteBtn(
-                    hugeIcon: HugeIcons.strokeRoundedFavourite,
+                    iconData: Icons.favorite_border_rounded,
                     containerSize: screenWidth * 0.10,
                     iconSize: screenWidth * 0.07,
                     containerColor: Colors.white,

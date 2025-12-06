@@ -1,4 +1,5 @@
 import 'package:bite_book/models/nutritionGridModel.dart';
+import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
@@ -8,6 +9,8 @@ import '../models/recipe_detail_model.dart';
 
 final List<RecipeDetailModel> recipes = [
   RecipeDetailModel(
+    id: 'recipe_01',
+    category: "Breakfast",
     image: 'assets/images/pasta.jpg',
     title: 'Creamy Alfredo Pasta',
     subtitle: 'A rich and creamy pasta dish made with parmesan, cream, and butter.',
@@ -29,6 +32,8 @@ final List<RecipeDetailModel> recipes = [
     panelController: PanelController(),
   ),
   RecipeDetailModel(
+    id: 'recipe_02',
+    category: "Lunch",
     image: 'assets/images/biryani.png',
     title: 'Chicken Biryani',
     subtitle: 'Spicy and aromatic chicken biryani with basmati rice.',
@@ -49,6 +54,8 @@ final List<RecipeDetailModel> recipes = [
     panelController: PanelController(),
   ),
   RecipeDetailModel(
+    id: 'recipe_03',
+    category: "Dinner",
     image: 'assets/images/salad.jpg',
     title: 'Greek Salad',
     subtitle: 'Fresh vegetables with feta cheese and olives.',
@@ -110,92 +117,11 @@ const List<String> categoryNamesList = [
 //
 // Nutrition Grid
 final List<NutritionGridModel> recipeDetailNutritionGridList = [
-  NutritionGridModel(title: "50g carbs", icon: HugeIcons.strokeRoundedBread04),
-  NutritionGridModel(title: "12g proteins", icon: HugeIcons.strokeRoundedAvocado),
-  NutritionGridModel(title: "450 Kcal", icon: HugeIcons.strokeRoundedFire03),
-  NutritionGridModel(title: "20g fats", icon: HugeIcons.strokeRoundedPizza01),
+  NutritionGridModel(title: "50g carbs", icon: Icons.rice_bowl),
+  NutritionGridModel(title: "12g proteins", icon: Icons.fitness_center),
+  NutritionGridModel(title: "450 Kcal", icon: Icons.local_fire_department),
+  NutritionGridModel(title: "20g fats", icon: Icons.opacity),
 ];
-//
-// //-------------------Ingredients for 3 recipes-------------------
-// const List<List<String>> recipeDetailIngredients = [
-//   // Recipe 1 - Creamy Alfredo Pasta
-//   [
-//     '200g pasta (penne or fettuccine)',
-//     '1 cup heavy cream',
-//     '1/2 cup grated parmesan cheese',
-//     '2 tbsp butter',
-//     '1 tsp garlic, minced',
-//     'Salt & pepper to taste',
-//     'Chopped parsley for garnish',
-//   ],
-//
-//   // Recipe 2 - Chicken Biryani
-//   [
-//     '2 cups basmati rice',
-//     '500g chicken, cut into pieces',
-//     '1 cup yogurt',
-//     '2 onions, sliced',
-//     '2 tbsp biryani masala',
-//     '1 tsp ginger-garlic paste',
-//     'Salt to taste',
-//     'Fresh coriander for garnish',
-//   ],
-//
-//   // Recipe 3 - Greek Salad
-//   [
-//     '2 cups chopped lettuce',
-//     '1 cup diced tomatoes',
-//     '1/2 cup sliced cucumbers',
-//     '1/4 cup sliced red onion',
-//     '1/4 cup feta cheese',
-//     '10 olives, halved',
-//     '2 tbsp olive oil',
-//     '1 tbsp lemon juice',
-//     'Salt & pepper to taste',
-//   ],
-// ];
-//
-// //-------------------Instructions for 3 recipes-------------------
-// const List<List<String>> recipeDetailInstructions = [
-//   // Recipe 1 - Creamy Alfredo Pasta
-//   [
-//     'Boil pasta in salted water until al dente. Drain and set aside.',
-//     'In a pan, melt butter and sauté garlic until fragrant.',
-//     'Add cream and simmer for 2-3 minutes.',
-//     'Stir in parmesan cheese until sauce is smooth.',
-//     'Add cooked pasta to the sauce and mix well.',
-//     'Season with salt and pepper.',
-//     'Garnish with chopped parsley and serve hot.',
-//   ],
-//
-//   // Recipe 2 - Chicken Biryani
-//   [
-//     'Marinate chicken with yogurt, biryani masala, and salt for 30 minutes.',
-//     'Fry sliced onions until golden brown.',
-//     'Cook rice until 70% done and drain.',
-//     'Layer chicken and rice in a pot, adding fried onions on top.',
-//     'Cover and cook on low heat for 25-30 minutes.',
-//     'Garnish with fresh coriander and serve hot.',
-//   ],
-//
-//   // Recipe 3 - Greek Salad
-//   [
-//     'Chop lettuce, tomatoes, cucumbers, and red onion.',
-//     'Mix all vegetables in a large bowl.',
-//     'Add feta cheese and olives on top.',
-//     'Drizzle olive oil and lemon juice.',
-//     'Season with salt and pepper.',
-//     'Toss gently and serve immediately.',
-//   ],
-// ];
-//
-// // ------------------Ingredient Amount
-//
-// const List<List<String>> ingredientAmount = [
-//   ['6','2','5','1','9'],
-//   ['9','4','5','5','9'],
-//   ['4','8','1','1','9'],
-// ];
 
 // Related Recipes
 const List<Map<String, String>> recipeDetailRelatedRecipes = [
@@ -215,3 +141,5 @@ const List<Map<String, String>> recipeDetailRelatedRecipes = [
     'subtitle': 'Soft and airy pancakes perfect for breakfast.'
   },
 ];
+
+const List<int> favItems=[];

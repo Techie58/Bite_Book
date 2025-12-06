@@ -62,6 +62,7 @@ class _IngredientCardDesignState extends State<IngredientCardDesign> {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: mainBlueColor,
+                overflow: TextOverflow.ellipsis
               ),
             ),
             Text(
@@ -70,6 +71,7 @@ class _IngredientCardDesignState extends State<IngredientCardDesign> {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: mainBlueColor,
+                overflow: TextOverflow.ellipsis
               ),
             ),
           ],

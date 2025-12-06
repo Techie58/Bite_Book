@@ -1,7 +1,7 @@
-import 'package:hugeicons/hugeicons.dart';
+import 'package:flutter/cupertino.dart';
 
 class NutritionGridModel{
-  final List<List<dynamic>> icon;
+  final IconData icon;
   final String title;
 
   NutritionGridModel({required this.icon, required this.title});

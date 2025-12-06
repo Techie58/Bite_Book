@@ -3,6 +3,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'nutritionGridModel.dart';
 
 class RecipeDetailModel {
+  final String id; // e.g pasta_01
   final String image;
   final String title;
   final String subtitle;
@@ -12,8 +13,11 @@ class RecipeDetailModel {
   final List<NutritionGridModel> nutritionGridList;
   final List<Map<String, String>> relatedRecipes;
   final PanelController panelController;
+  final String category; // 'Breakfast' | 'Lunch' | 'Dinner'
 
   RecipeDetailModel({
+    required this.id,
+    required this.category,
     required this.image,
     required this.title,
     required this.subtitle,

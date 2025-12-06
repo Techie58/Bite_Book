@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "34297204742",
+    "project_id": "bite-book-e0d2c",
+    "storage_bucket": "bite-book-e0d2c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:34297204742:android:265e5d6a4ebdc533dc3387",
+        "android_client_info": {
+          "package_name": "com.example.bite_book"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHH3rDYwO0ENnBAID5ZUXId-6arphDSJc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

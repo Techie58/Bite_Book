@@ -2,16 +2,15 @@ import 'package:bite_book/designs/home/category_container_design.dart';
 import 'package:bite_book/models/recipe_detail_model.dart';
 import 'package:bite_book/widgets/appBar.dart';
 import 'package:bite_book/widgets/featured_banner_pageController.dart';
-import 'package:bite_book/widgets/recipies_listView.dart';
+import 'package:bite_book/widgets/recipes_gridView.dart';
 import 'package:bite_book/widgets/see_all_tile.dart';
 import 'package:flutter/material.dart';
 import '../utils/constants.dart';
 
-
 class Home extends StatelessWidget {
   final List<RecipeDetailModel> recipesModelList;
 
-  Home({super.key, required this.recipesModelList });
+  Home({super.key, required this.recipesModelList});
 
   PageController bannerController = PageController();
   @override
@@ -32,10 +31,7 @@ class Home extends StatelessWidget {
               SeeAllTile(tileName: "Category"),
               CategoryDesign(categoryList: categoryNamesList),
               SeeAllTile(tileName: 'Popular Recipes'),
-              RecipesGridView(
-                recipesModelList: recipesModelList,
-
-              ),
+              RecipesGridView(),
             ],
           ),
         ),
