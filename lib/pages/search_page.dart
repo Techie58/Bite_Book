@@ -49,7 +49,7 @@ class SearchPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SeeAllTile(tileName: "Categories"),
-                CategoryListView(categoryList: categoryNamesList),
+                CategoryListView(categoryList: categoryNamesList,),
               ],
             ),
           ),

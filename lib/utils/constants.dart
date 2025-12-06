@@ -104,6 +104,7 @@ const List<String> editorChoiceRecipesNamesList = [
 ];
 //
 const List<String> categoryNamesList = [
+  "All",
   "Breakfast",
   "Lunch",
   "Dinner",
