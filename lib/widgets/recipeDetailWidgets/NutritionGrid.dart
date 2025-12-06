@@ -1,6 +1,5 @@
 import 'package:bite_book/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
 
 import '../../designs/recipeDetail/favourite_btn.dart';
 import '../../models/nutritionGridModel.dart';

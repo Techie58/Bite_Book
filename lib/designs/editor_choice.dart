@@ -25,7 +25,7 @@ class EditorChoiceCardDesign extends StatelessWidget {
           ),
         ),
         title: Text(
-          recipesNamesList[index],
+          editorChoiceRecipesNamesList[index],
           style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,

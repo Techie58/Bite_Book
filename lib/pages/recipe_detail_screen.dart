@@ -1,4 +1,5 @@
 import 'package:bite_book/designs/recipeDetail/favourite_btn.dart';
+import 'package:bite_book/models/recipe_detail_model.dart';
 import 'package:bite_book/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -8,25 +9,12 @@ import '../models/nutritionGridModel.dart';
 import '../widgets/recipeDetailWidgets/recipe_detail_panel.dart';
 
 class RecipeDetailScreen extends StatefulWidget {
-  final String image;
-  final String title;
-  final String subtitle;
-  final List<NutritionGridModel> recipeDetailNutritionGridList;
-  final List<String> ingredients;
-  final List<String> instructions;
-  final List<Map<String, String>> relatedRecipes;
-  final PanelController panelController;
+  final RecipeDetailModel recipeDetailModel;
 
   const RecipeDetailScreen({
     super.key,
-    required this.image,
-    required this.title,
-    required this.subtitle,
-    required this.recipeDetailNutritionGridList,
-    required this.ingredients,
-    required this.instructions,
-    required this.relatedRecipes,
-    required this.panelController,
+
+    required this.recipeDetailModel,
   });
 
   @override
@@ -46,7 +34,7 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
       body: Stack(
         children: [
           SlidingUpPanel(
-            controller: widget.panelController,
+            controller: widget.recipeDetailModel.panelController,
             maxHeight: screenHeight * 0.8,
             minHeight: screenHeight * 0.3,
             parallaxEnabled: true,
@@ -66,17 +54,11 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
             body: SizedBox(
               height: screenHeight * 0.2,
               width: double.infinity,
-              child: Image.asset(widget.image, fit: BoxFit.cover),
+              child: Image.asset(widget.recipeDetailModel.image, fit: BoxFit.cover),
             ),
             panelBuilder: (controller) => RecipeDetailPanel(
-              panelController: widget.panelController,
-              title: widget.title,
-              subTitle: widget.subtitle,
-              ingredients: widget.ingredients,
-              instructions: widget.instructions,
-              recipeDetailNutritionGridList:
-                  widget.recipeDetailNutritionGridList,
-              relatedRecipes: widget.relatedRecipes,
+              panelController: widget.recipeDetailModel.panelController,
+              recipeDetailModel: widget.recipeDetailModel,
               controller: controller,
               isPanelOpen: isPanelOpened,
             ),

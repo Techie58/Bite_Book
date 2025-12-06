@@ -1,5 +1,5 @@
+import 'package:bite_book/pages/fav_page.dart';
 import 'package:bite_book/pages/home.dart';
-import 'package:bite_book/pages/recipe_detail_screen.dart';
 import 'package:bite_book/pages/search_page.dart';
 import 'package:bite_book/pages/setting_page.dart';
 import 'package:bite_book/utils/constants.dart';
@@ -10,6 +10,8 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class MainNavScreen extends StatefulWidget {
+  const MainNavScreen({super.key});
+
   @override
   State<MainNavScreen> createState() => _MainNavigationState();
 }
@@ -18,18 +20,9 @@ class _MainNavigationState extends State<MainNavScreen> {
   final PanelController panelController = PanelController();
   int currentIndex = 0;
   List<Widget> get screen => [
-    Home(),
-    SearchPage(),
-    RecipeDetailScreen(
-      panelController: panelController,
-      image: recipeDetailImage,
-      title: recipeDetailTitle,
-      subtitle: recipeDetailSubtitle,
-      recipeDetailNutritionGridList: recipeDetailNutritionGridList,
-      ingredients: recipeDetailIngredients,
-      instructions: recipeDetailInstructions,
-      relatedRecipes: recipeDetailRelatedRecipes,
-    ),
+    Home(recipesModelList: recipes),
+    SearchPage(recipeDetailModelList: recipes,),
+    FavPage(),
     SettingPage(),
   ];
 

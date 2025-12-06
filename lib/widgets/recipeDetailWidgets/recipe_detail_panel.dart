@@ -1,4 +1,4 @@
-import 'package:bite_book/utils/constants.dart';
+import 'package:bite_book/models/recipe_detail_model.dart';
 import 'package:bite_book/widgets/recipeDetailWidgets/ExpandableText.dart';
 import 'package:bite_book/widgets/recipeDetailWidgets/NutritionGrid.dart';
 import 'package:bite_book/widgets/recipeDetailWidgets/toggIngredientOrInstruction.dart';
@@ -8,28 +8,21 @@ import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../../designs/recipeDetail/instruction_button.dart';
-import '../../models/nutritionGridModel.dart';
 import 'IngredientsOrInstructionList.dart';
 
 class RecipeDetailPanel extends StatefulWidget {
+  final RecipeDetailModel recipeDetailModel;
   final ScrollController controller;
-  final String title, subTitle;
-  final List<NutritionGridModel> recipeDetailNutritionGridList;
-  final List<String> ingredients;
-  final List<String> instructions;
-  final List<Map<String, String>> relatedRecipes;
+
   final PanelController panelController;
   final bool isPanelOpen;
 
   const RecipeDetailPanel({
     super.key,
     required this.controller,
-    required this.title,
-    required this.subTitle,
-    required this.recipeDetailNutritionGridList,
-    required this.ingredients,
-    required this.instructions,
-    required this.relatedRecipes, required this.panelController, required this.isPanelOpen,
+    required this.panelController,
+    required this.isPanelOpen,
+    required this.recipeDetailModel,
   });
 
   @override
@@ -70,7 +63,7 @@ class _RecipeDetailPanelState extends State<RecipeDetailPanel> {
           child: Padding(
             padding: EdgeInsets.all(16),
             child: Text(
-              widget.title,
+              widget.recipeDetailModel.title,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
@@ -79,7 +72,7 @@ class _RecipeDetailPanelState extends State<RecipeDetailPanel> {
         SliverToBoxAdapter(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 16),
-            child: ExpandableText(text: widget.subTitle),
+            child: ExpandableText(text: widget.recipeDetailModel.subtitle),
           ),
         ),
 
@@ -89,7 +82,7 @@ class _RecipeDetailPanelState extends State<RecipeDetailPanel> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
             child: NutritionGrid(
               recipeDetailNutritionGridList:
-                  widget.recipeDetailNutritionGridList,
+                  widget.recipeDetailModel.nutritionGridList,
             ),
           ),
         ),
@@ -122,8 +115,12 @@ class _RecipeDetailPanelState extends State<RecipeDetailPanel> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: isIngredient
-                ? IngredientsList(ingredients: widget.ingredients)
-                : InstructionsList(instructions: recipeDetailInstructions),
+                ? IngredientsList(
+                    recipeDetailModel: widget.recipeDetailModel,
+                  )
+                : InstructionsList(
+                    recipeDetailModel: widget.recipeDetailModel,
+                  ),
           ),
         ),
 
@@ -148,5 +145,7 @@ class _RecipeDetailPanelState extends State<RecipeDetailPanel> {
     );
   }
 
-  void onTogglePanelFun() => widget.isPanelOpen ? widget.panelController.close() : widget.panelController.open();
+  void onTogglePanelFun() => widget.isPanelOpen
+      ? widget.panelController.close()
+      : widget.panelController.open();
 }

@@ -2,6 +2,7 @@ import 'package:bite_book/designs/home/category_container_design.dart';
 import 'package:bite_book/designs/editor_choice.dart';
 import 'package:bite_book/designs/home/recipes_card_design.dart';
 import 'package:bite_book/designs/search_container_design.dart';
+import 'package:bite_book/models/recipe_detail_model.dart';
 import 'package:bite_book/utils/colors.dart';
 import 'package:bite_book/utils/constants.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,8 @@ import '../widgets/category_listview.dart';
 import '../widgets/see_all_tile.dart';
 
 class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+  final List<RecipeDetailModel> recipeDetailModelList;
+  const SearchPage({super.key, required this.recipeDetailModelList});
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +63,12 @@ class SearchPage extends StatelessWidget {
                 SizedBox(
                   height: 190,
                   child: ListView.builder(
-                    itemCount: recipesNamesList.length,
+                    itemCount: recipesImagesList.length,
                     scrollDirection: Axis.horizontal,
                     padding: const EdgeInsets.only(left: 12),
                     itemBuilder: (context, index) {
-                      return RecipesCardDesign(index: index, isHomePage: false);
+                      final currentRecipe = recipeDetailModelList[index];
+                      return RecipesCardDesign(index: index, isHomePage: false, recipeDetailModel:currentRecipe , );
                     },
                   ),
                 ),
@@ -83,7 +86,7 @@ class SearchPage extends StatelessWidget {
                   (context, index) {
                 return EditorChoiceCardDesign(index: index);
               },
-              childCount: recipesNamesList.length,
+              childCount: recipesImagesList.length,
             ),
           ),
         ],
