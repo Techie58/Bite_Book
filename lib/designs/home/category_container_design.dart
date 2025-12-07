@@ -34,7 +34,7 @@ class _CategoryDesignState extends State<CategoryDesign> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
               decoration: BoxDecoration(
-                color: isSelected ? myCyanColor : transparentGrey,
+                color: isSelected ? myCyanColor : myTransparentGrey,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(

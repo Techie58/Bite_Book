@@ -1,6 +1,7 @@
 import 'package:bite_book/designs/home/category_container_design.dart';
 import 'package:bite_book/models/recipe_detail_model.dart';
 import 'package:bite_book/widgets/appBar.dart';
+import 'package:bite_book/widgets/category_listview.dart';
 import 'package:bite_book/widgets/featured_banner_pageController.dart';
 import 'package:bite_book/widgets/recipes_gridView.dart';
 import 'package:bite_book/widgets/see_all_tile.dart';
@@ -29,7 +30,7 @@ class Home extends StatelessWidget {
                 bannerController: bannerController,
               ),
               SeeAllTile(tileName: "Category"),
-              CategoryDesign(categoryList: categoryNamesList),
+              CategoryListView(categoryList: categoryNamesList),
               SeeAllTile(tileName: 'Popular Recipes'),
               RecipesGridView(),
             ],

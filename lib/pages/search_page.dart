@@ -1,7 +1,7 @@
 import 'package:bite_book/designs/home/category_container_design.dart';
 import 'package:bite_book/designs/editor_choice.dart';
 import 'package:bite_book/designs/home/recipes_card_design.dart';
-import 'package:bite_book/designs/search_container_design.dart';
+import 'package:bite_book/designs/search_bar_design.dart';
 import 'package:bite_book/models/recipe_detail_model.dart';
 import 'package:bite_book/utils/colors.dart';
 import 'package:bite_book/utils/constants.dart';
@@ -16,6 +16,7 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController searchTextFieldController = TextEditingController();
     return SafeArea(
       child: CustomScrollView(
         slivers: [
@@ -29,7 +30,7 @@ class SearchPage extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: mainBlueColor,
+                  color: myMainBlueColor,
                 ),
               ),
             ),
@@ -39,7 +40,9 @@ class SearchPage extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: SearchContainerDesign(),
+              child: SearchBarDesign(
+                searchTextFieldController: searchTextFieldController,
+              ),
             ),
           ),
 

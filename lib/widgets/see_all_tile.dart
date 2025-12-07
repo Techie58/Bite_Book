@@ -1,3 +1,4 @@
+import 'package:bite_book/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 
 class SeeAllTile extends StatelessWidget{
@@ -26,7 +27,7 @@ class SeeAllTile extends StatelessWidget{
             style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Color(0xFF70b9be),
+              color: myCyanColor,
             ),
           ),
         ],

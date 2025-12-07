@@ -16,7 +16,7 @@ class FavPage extends StatelessWidget {
         title: Text('Favourite Recipes'),
         backgroundColor: Colors.white,
         elevation: 2,
-        foregroundColor: mainBlueColor,
+        foregroundColor: myMainBlueColor,
         centerTitle: true,
       ),
       body: favorites.isEmpty

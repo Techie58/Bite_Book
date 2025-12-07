@@ -1,4 +1,5 @@
 // lib/widgets/category_list.dart
+import 'package:bite_book/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +19,7 @@ class CategoryListView extends StatelessWidget {
           children: [
             // Add 'All' option
             _buildChip(context, 'All', selected == 'All'),
-            for (final c in categoryList) _buildChip(context, c, selected == c),
+            for (final category in categoryList) _buildChip(context, category, selected == category),
           ],
         );
       },
@@ -28,8 +29,11 @@ class CategoryListView extends StatelessWidget {
   Widget _buildChip(BuildContext context, String label, bool active) {
     final prov = Provider.of<RecipeProvider>(context, listen: false);
     return ChoiceChip(
-      label: Text(label),
+      label: Text(label,style: TextStyle(color: active ? Colors.white : Colors.black),),
       selected: active,
+      selectedColor: myCyanColor,
+      checkmarkColor: Colors.white,
+      backgroundColor: myTransparentGrey,
       onSelected: (_) => prov.setCategory(label),
     );
   }

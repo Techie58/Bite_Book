@@ -17,7 +17,7 @@ class InstructionBtn extends StatelessWidget{
       width: double.infinity,
       height: 56,
       decoration: BoxDecoration(
-        color: mainBlueColor,
+        color: myMainBlueColor,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(

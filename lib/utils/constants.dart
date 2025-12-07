@@ -55,7 +55,7 @@ final List<RecipeDetailModel> recipes = [
   ),
   RecipeDetailModel(
     id: 'recipe_03',
-    category: "Dinner",
+    category: "Dinner G",
     image: 'assets/images/salad.jpg',
     title: 'Greek Salad',
     subtitle: 'Fresh vegetables with feta cheese and olives.',
@@ -104,7 +104,6 @@ const List<String> editorChoiceRecipesNamesList = [
 ];
 //
 const List<String> categoryNamesList = [
-  "All",
   "Breakfast",
   "Lunch",
   "Dinner",

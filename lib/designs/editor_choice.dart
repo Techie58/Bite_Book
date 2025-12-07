@@ -51,7 +51,7 @@ class EditorChoiceCardDesign extends StatelessWidget {
         ),
         trailing: CircleAvatar(
           radius: 20,
-          backgroundColor: mainBlueColor,
+          backgroundColor: myMainBlueColor,
           child: const Icon(Icons.arrow_forward, size: 24, color: Colors.white),
         ),
       ),

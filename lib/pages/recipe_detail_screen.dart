@@ -1,8 +1,10 @@
 import 'package:bite_book/designs/recipeDetail/favourite_btn.dart';
 import 'package:bite_book/models/recipe_detail_model.dart';
+import 'package:bite_book/providers/fav_recipe_provider.dart';
 import 'package:bite_book/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 import '../models/nutritionGridModel.dart';
@@ -77,13 +79,23 @@ class _RecipeDetailScreenState extends State<RecipeDetailScreen> {
                       iconSize: screenWidth * 0.07,
                     ),
                   ),
-                  FavouriteBtn(
-                    iconData: Icons.favorite_border_rounded,
-                    containerSize: screenWidth * 0.10,
-                    iconSize: screenWidth * 0.07,
-                    containerColor: Colors.white,
+                  Consumer<RecipeProvider>(builder: (context,provider,_){
+                    final isFav = provider.isFavorite(widget.recipeDetailModel.id);
 
-                  ),
+                    return FavouriteBtn(
+                      iconData: isFav ? Icons.favorite : Icons.favorite_border_rounded,
+                      containerSize: screenWidth * 0.10,
+                      iconSize: screenWidth * 0.07,
+                      containerColor: Colors.white,
+                      iconColor: isFav ? Colors.red : Colors.black,
+                      onTap: (){
+                        provider.toggleFavorite(widget.recipeDetailModel.id);
+                      },
+
+
+                    );
+                  })
+
                 ],
               ),
             ),

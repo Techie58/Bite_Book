@@ -35,7 +35,7 @@ class _ExpandableTextState extends State<ExpandableText> {
           },
           child: Text(
             expanded ? 'View Less' : 'View More',
-            style: const TextStyle(color: mainBlueColor, fontWeight: FontWeight.bold),
+            style: const TextStyle(color: myMainBlueColor, fontWeight: FontWeight.bold),
           ),
         ),
       ],

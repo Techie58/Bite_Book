@@ -20,7 +20,7 @@ class RecipesCardDesign extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<RecipeProvider>(context, listen: false);
+    print('Build of card');
 
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -69,7 +69,7 @@ class RecipesCardDesign extends StatelessWidget {
                               iconSize: 22,
                               iconColor: isFav ? Colors.red : Colors.black,
                               onTap: (){
-                                provider.toggleFavorite(recipeDetailModel.id);
+                                val.toggleFavorite(recipeDetailModel.id);
                               },
                             );
                           },

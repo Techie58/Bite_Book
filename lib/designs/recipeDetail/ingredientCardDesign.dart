@@ -43,7 +43,7 @@ class _IngredientCardDesignState extends State<IngredientCardDesign> {
     double picCardSize = screenWidth * 0.2;
     return Card(
       elevation: 2,
-      color: transparentGrey,
+      color: myTransparentGrey,
       child: ListTile(
         minTileHeight: screenWidth * 0.21,
         leading: ClipRRect(
@@ -61,7 +61,7 @@ class _IngredientCardDesignState extends State<IngredientCardDesign> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: mainBlueColor,
+                color: myMainBlueColor,
                 overflow: TextOverflow.ellipsis
               ),
             ),
@@ -70,7 +70,7 @@ class _IngredientCardDesignState extends State<IngredientCardDesign> {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
-                color: mainBlueColor,
+                color: myMainBlueColor,
                 overflow: TextOverflow.ellipsis
               ),
             ),

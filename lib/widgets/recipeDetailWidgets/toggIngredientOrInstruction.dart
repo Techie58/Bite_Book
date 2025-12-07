@@ -50,9 +50,9 @@ class _ToggleState extends State<ToggleIngredientOrInstruction> {
     return Container(
       height: MediaQuery.of(context).size.height * 0.08,
       decoration: BoxDecoration(
-        color: transparentGrey,
+        color: myTransparentGrey,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: transparentGrey),
+        border: Border.all(color: myTransparentGrey),
       ),
       child: Row(
         children: [
@@ -64,7 +64,7 @@ class _ToggleState extends State<ToggleIngredientOrInstruction> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: isIngredients
-                        ? mainBlueColor
+                        ? myMainBlueColor
                         : Colors.transparent,
                     borderRadius: BorderRadius.circular(16),
                   ),
@@ -76,7 +76,7 @@ class _ToggleState extends State<ToggleIngredientOrInstruction> {
                       fontWeight: FontWeight.bold,
                       color: isIngredients
                           ? Colors.white
-                          : mainBlueColor,
+                          : myMainBlueColor,
                     ),
                   ),
                 ),
@@ -92,7 +92,7 @@ class _ToggleState extends State<ToggleIngredientOrInstruction> {
                   decoration: BoxDecoration(
                     color: isIngredients
                         ? Colors.transparent
-                        : mainBlueColor,
+                        : myMainBlueColor,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   alignment: Alignment.center,
@@ -102,7 +102,7 @@ class _ToggleState extends State<ToggleIngredientOrInstruction> {
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                       color: isIngredients
-                          ? mainBlueColor
+                          ? myMainBlueColor
                           : Colors.white,
                     ),
                   ),

@@ -17,8 +17,8 @@ class FavouriteBtn extends StatelessWidget {
     required this.iconData,
     required this.containerSize,
     required this.iconSize,
-    this.iconColor = mainBlueColor,
-    this.containerColor = transparentGrey,
+    this.iconColor = myMainBlueColor,
+    this.containerColor = myTransparentGrey,
     this.containerRadius = 6,
     this.onTap,
   });

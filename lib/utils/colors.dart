@@ -2,7 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-const mainBlueColor=Color(0xFF0A2533);
-const transparentGrey = Color(0xFFe6ebf2);
+const myMainBlueColor=Color(0xFF0A2533);
+const myTransparentGrey = Color(0xFFe6ebf2);
 
-const myCyanColor = Color(0xFF042628);
+const myCyanColor = Color(0xFF70b9be);
+
