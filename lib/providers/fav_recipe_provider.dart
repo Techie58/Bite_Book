@@ -26,10 +26,10 @@ class RecipeProvider extends ChangeNotifier {
       list = list.where((r) => r.category == _selectedCategory).toList();
     }
     if (_searchQuery.isNotEmpty) {
-      final q = _searchQuery.toLowerCase();
+      final query = _searchQuery.toLowerCase();
       list = list.where((r) =>
-      r.title.toLowerCase().contains(q) ||
-          r.subtitle.toLowerCase().contains(q)
+      r.title.toLowerCase().contains(query) ||
+          r.subtitle.toLowerCase().contains(query)
       ).toList();
     }
     return list;

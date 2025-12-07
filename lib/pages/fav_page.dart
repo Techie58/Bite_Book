@@ -1,5 +1,6 @@
 // lib/screens/favorites.dart
 import 'package:bite_book/designs/home/recipes_card_design.dart';
+import 'package:bite_book/pages/recipe_detail_screen.dart';
 import 'package:bite_book/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,16 +27,26 @@ class FavPage extends StatelessWidget {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
               ),
-              itemBuilder: (context, index) => GestureDetector(
-                onTap: () {
-                  /* open detail */
-                },
-                child: RecipesCardDesign(
-                  recipeDetailModel: favorites[index],
-                  index: index,
-                  isHomePage: true,
-                ),
-              ),
+              itemBuilder: (context, index) {
+                final currentRecipe = favorites[index];
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RecipeDetailScreen(
+                          recipeDetailModel: currentRecipe,
+                        ),
+                      ),
+                    );
+                  },
+                  child: RecipesCardDesign(
+                    recipeDetailModel: favorites[index],
+                    index: index,
+                    isHomePage: true,
+                  ),
+                );
+              },
             ),
     );
   }
