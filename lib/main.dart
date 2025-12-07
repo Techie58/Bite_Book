@@ -23,7 +23,10 @@ class MyApp extends StatelessWidget {
     child:MaterialApp(
       title: 'BiteBook',
       debugShowCheckedModeBanner: false,
-      home: MainNavScreen(),
+      home: MainNavScreen(
+        key: MainNavScreen.globalKey,
+
+      ),
     ) ,);
       
   }

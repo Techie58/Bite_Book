@@ -10,7 +10,12 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 class MainNavScreen extends StatefulWidget {
-  const MainNavScreen({super.key});
+
+  static final GlobalKey<_MainNavigationState> globalKey =
+  GlobalKey<_MainNavigationState>();
+
+  final int index;
+  const MainNavScreen({super.key, this.index = 0});
 
   @override
   State<MainNavScreen> createState() => _MainNavigationState();
@@ -18,7 +23,7 @@ class MainNavScreen extends StatefulWidget {
 
 class _MainNavigationState extends State<MainNavScreen> {
   final PanelController panelController = PanelController();
-  int currentIndex = 0;
+  late int currentIndex = 0;
   List<Widget> get screen => [
     Home(recipesModelList: recipes),
     SearchPage(recipeDetailModelList: recipes,),

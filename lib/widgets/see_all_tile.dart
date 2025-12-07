@@ -3,9 +3,10 @@ import 'package:flutter/cupertino.dart';
 
 class SeeAllTile extends StatelessWidget{
   final String tileName,seeAll;
+  final Function()? onPressed;
 
 
-  const SeeAllTile({super.key, required this.tileName,  this.seeAll = "See All"});
+  const SeeAllTile({super.key, required this.tileName,  this.seeAll = "See All", this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +23,15 @@ class SeeAllTile extends StatelessWidget{
               color: Color(0xFF0A2533),
             ),
           ),
-          Text(
-            seeAll,
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: myCyanColor,
+          GestureDetector(
+            onTap: onPressed,
+            child: Text(
+              seeAll,
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: myCyanColor,
+              ),
             ),
           ),
         ],

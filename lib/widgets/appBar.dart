@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class MyAppBar extends StatelessWidget {
   final partOfDayText;
   final nameOfUser;
-
+  final Function()? onPressed;
   const MyAppBar({
     super.key,
     required this.partOfDayText,
-    required this.nameOfUser,
+    required this.nameOfUser, required this.onPressed,
   });
 
   @override
@@ -44,13 +44,10 @@ class MyAppBar extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            children: [
-              Icon(Icons.search_outlined),
-              SizedBox(width: 10,),
-              Icon(Icons.shopping_cart_outlined, size: 24),
-            ],
-          ),
+          GestureDetector(
+            onTap: onPressed,
+              child: Icon(Icons.search_outlined)),
+
         ],
       ),
     );

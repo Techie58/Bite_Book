@@ -1,5 +1,8 @@
 import 'package:bite_book/designs/home/category_container_design.dart';
+import 'package:bite_book/main_navScreen.dart';
 import 'package:bite_book/models/recipe_detail_model.dart';
+import 'package:bite_book/pages/allRecpesPage.dart';
+import 'package:bite_book/pages/search_page.dart';
 import 'package:bite_book/widgets/appBar.dart';
 import 'package:bite_book/widgets/category_listview.dart';
 import 'package:bite_book/widgets/featured_banner_pageController.dart';
@@ -23,7 +26,13 @@ class Home extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              MyAppBar(partOfDayText: "Good Evening", nameOfUser: "Musa Javed"),
+              MyAppBar(
+                partOfDayText: "Good Evening",
+                nameOfUser: "Musa Javed",
+                onPressed: () {
+                  MainNavScreen.globalKey.currentState?.onNavTap(1);
+                  },
+              ),
               SizedBox(height: 4),
               FeaturedBannerPageController(
                 bannersPics: bannersPicsList,
@@ -31,7 +40,12 @@ class Home extends StatelessWidget {
               ),
               SeeAllTile(tileName: "Category"),
               CategoryListView(categoryList: categoryNamesList),
-              SeeAllTile(tileName: 'Popular Recipes'),
+              SeeAllTile(
+                tileName: 'Popular Recipes',
+                onPressed: () {
+                  return SearchPage(recipeDetailModelList: recipes);
+                },
+              ),
               RecipesGridView(),
             ],
           ),
