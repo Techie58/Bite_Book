@@ -12,13 +12,20 @@ import 'package:provider/provider.dart';
 import '../widgets/category_listview.dart';
 import '../widgets/see_all_tile.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   final List<RecipeDetailModel> recipeDetailModelList;
   const SearchPage({super.key, required this.recipeDetailModelList});
 
   @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  late TextEditingController searchTextFieldController = TextEditingController();
+
+
+  @override
   Widget build(BuildContext context) {
-    TextEditingController searchTextFieldController = TextEditingController();
     final provider = Provider.of<RecipeProvider>(context);
     final recipes = provider.filteredRecipes;
     return SafeArea(
@@ -84,7 +91,7 @@ class SearchPage extends StatelessWidget {
           ),
 
           /// 🔹 Editor's Choice List
-          /// 
+          ///
           SliverToBoxAdapter(
             child: SeeAllTile(tileName: "Editor's Choice"),
           ),
