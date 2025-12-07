@@ -28,7 +28,7 @@ class _MainNavigationState extends State<MainNavScreen> {
     Home(recipesModelList: recipes),
     SearchPage(recipeDetailModelList: recipes,),
     FavPage(),
-    SettingPage(),
+    SettingPage(settings: settingScreenDetail,),
   ];
 
   void onNavTap(int index) {

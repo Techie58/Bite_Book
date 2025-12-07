@@ -1,4 +1,5 @@
 import 'package:bite_book/models/nutritionGridModel.dart';
+import 'package:bite_book/models/setting_screen_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -141,5 +142,71 @@ const List<Map<String, String>> recipeDetailRelatedRecipes = [
     'subtitle': 'Soft and airy pancakes perfect for breakfast.'
   },
 ];
+final List<SettingScreenModel> settingScreenDetail = [
+  SettingScreenModel(
+    Icon: Icons.shopping_cart_outlined,
+    title: 'My Addresses',
+    subtitle: 'Set Shopping Delivery Address',
+  ),
+  SettingScreenModel(
+    Icon: Icons.notifications_none,
+    title: 'Notifications',
+    subtitle: 'Manage app notifications',
+  ),
+  SettingScreenModel(
+    Icon: Icons.lock_outline,
+    title: 'Change Password',
+    subtitle: 'Update your account password',
+  ),
+  SettingScreenModel(
+    Icon: Icons.language_outlined,
+    title: 'Language',
+    subtitle: 'Select your preferred language',
+  ),
+  SettingScreenModel(
+    Icon: Icons.help_outline,
+    title: 'Help & Support',
+    subtitle: 'FAQs and customer support',
+  ),
+  SettingScreenModel(
+    Icon: Icons.shopping_cart_outlined,
+    title: 'My Addresses',
+    subtitle: 'Set Shopping Delivery Address',
+  ),
+  SettingScreenModel(
+    Icon: Icons.notifications_none,
+    title: 'Notifications',
+    subtitle: 'Manage app notifications',
+  ),
+  SettingScreenModel(
+    Icon: Icons.lock_outline,
+    title: 'Change Password',
+    subtitle: 'Update your account password',
+  ),
+  SettingScreenModel(
+    Icon: Icons.language_outlined,
+    title: 'Language',
+    subtitle: 'Select your preferred language',
+  ),
+  SettingScreenModel(
+    Icon: Icons.help_outline,
+    title: 'Help & Support',
+    subtitle: 'FAQs and customer support',
+  ),
+  SettingScreenModel(
+    Icon: Icons.info_outline,
+    title: 'About App',
+    subtitle: 'Version info and terms',
+  ),
+  SettingScreenModel(
+    Icon: Icons.logout,
+    title: 'Logout',
+    subtitle: 'Sign out from your account',
+  ),
+];
 
-const List<int> favItems=[];
+
+const String userName = 'Musa Javed';
+const String userPic = 'assets/images/profile_pic.jpeg';
+
+

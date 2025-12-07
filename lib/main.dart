@@ -1,6 +1,7 @@
 import 'package:bite_book/main_navScreen.dart';
 import 'package:bite_book/pages/home.dart';
 import 'package:bite_book/providers/fav_recipe_provider.dart';
+import 'package:bite_book/providers/theme_provider.dart';
 import 'package:bite_book/utils/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(providers: [
       ChangeNotifierProvider(create: (_) => RecipeProvider(recipes)),
+      ChangeNotifierProvider(create: (_)=> ThemeProvider()),
       
     ],
     child:MaterialApp(

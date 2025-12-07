@@ -28,7 +28,7 @@ class Home extends StatelessWidget {
             children: [
               MyAppBar(
                 partOfDayText: "Good Evening",
-                nameOfUser: "Musa Javed",
+                nameOfUser: userName,
                 onPressed: () {
                   MainNavScreen.globalKey.currentState?.onNavTap(1);
                   },
@@ -43,7 +43,7 @@ class Home extends StatelessWidget {
               SeeAllTile(
                 tileName: 'Popular Recipes',
                 onPressed: () {
-                  return SearchPage(recipeDetailModelList: recipes);
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AllRecipesPage()));
                 },
               ),
               RecipesGridView(),
